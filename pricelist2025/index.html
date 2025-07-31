@@ -53,6 +53,8 @@
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 50px;
+      display: block;
+    width: 100%;
     }
     th, td {
       padding: 14px 12px;
@@ -68,6 +70,14 @@
       font-size: 15px;
       color: #333;
     }
+    ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
     .simple-list {
       font-size: 16px;
       color: #1d1d1f;
@@ -197,11 +207,48 @@
       flex: 1;
     }
     @media screen and (max-width: 600px) {
-        body {
-            font-size: 14px;
+      .container {
+    padding: 40px 16px;
+  }
+       body {
+            font-size: 16px;
             color: #666;
-
         }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  th, td {
+    white-space: nowrap;
+  }
+}
+       h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  p.description,
+  .note {
+    font-size: 15px;
+  }
+
+  th, td {
+    font-size: 14px;
+  }
     }
   </style>
 </head>

@@ -66,6 +66,7 @@
 @media (max-width: 768px) {
   .nav-content {
     justify-content: space-between;
+    align-items: center;
     padding: 0 20px;
   }
 
@@ -85,11 +86,12 @@
   }
 
   .navbar ul.show {
-    max-height: 500px; /* tampilkan menu saat dibuka */
+    max-height: 500px;
   }
 
   .hamburger {
     display: flex;
+    margin-left: auto; /* ini bikin ikon geser ke kanan */
   }
 }
 
@@ -1473,12 +1475,20 @@ const swiper = new Swiper('.whybuy-swiper', {
   },
   freeMode: true, // Penting biar geser bebas
 });
-const hamburger = document.getElementById('hamburger');
+  const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
+  const navLinks = document.querySelectorAll('#nav-menu a');
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('show');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('show');
+    });
   });
 
 
@@ -1490,6 +1500,7 @@ const hamburger = document.getElementById('hamburger');
   
 </body>
 </html>
+
 
 
 

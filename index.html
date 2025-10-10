@@ -471,6 +471,55 @@
   background-color: #fff;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .essentials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    max-height: 90vh; /* biar pas satu card aja kelihatan */
+    padding-right: 10px; /* biar ga nempel kanan */
+  }
+
+  .essentials-card {
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    max-width: none;
+    border-radius: 16px;
+  }
+
+  .essentials-section {
+    padding: 40px 20px;
+  }
+
+  .essentials-heading {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 24px;
+    padding-left: 0;
+  }
+
+  .essentials-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .essentials-text {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .essentials-text h3 {
+    font-size: 18px;
+  }
+
+  .essentials-text p {
+    font-size: 13px;
+  }
+}
 .bottom-carousel-section {
   padding: 80px 0;
   max-width: 100%;
@@ -1500,6 +1549,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

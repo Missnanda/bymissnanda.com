@@ -532,12 +532,12 @@
   position: relative;
   width: 100%;
 }
+
 .inner-section-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* matches your other sections */
+  padding: 0 20px;
 }
-
 
 .carousel-track {
   display: flex;
@@ -586,7 +586,6 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-
 .carousel-item:hover img {
   opacity: 0.7;
 }
@@ -596,12 +595,36 @@
   pointer-events: auto;
 }
 
+/* Animasi scroll */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* --- RESPONSIVE SECTION --- */
+@media (max-width: 768px) {
+  .carousel-track {
+    animation: none; /* stop auto-scroll di HP */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .carousel-item {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    margin-right: 0;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
   }
 }
 
@@ -1549,6 +1572,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

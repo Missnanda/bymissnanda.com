@@ -1423,12 +1423,24 @@ footer {
 
     const pendekatanSwiper = new Swiper('.pendekatan-swiper', {
   loop: false,
-  freeMode: true,
-  spaceBetween: 24,
-  slidesPerView: 'auto',
+  spaceBetween: 0,
+  slidesPerView: 1,
+  centeredSlides: true, // biar card pertama pas di tengah, gak geser ke kanan
   navigation: {
     nextEl: '.pendekatan-next',
     prevEl: '.pendekatan-prev',
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 24,
+      centeredSlides: false,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      centeredSlides: false,
+    },
   },
 });
 function toggleNote(button) {
@@ -1500,6 +1512,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

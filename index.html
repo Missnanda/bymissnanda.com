@@ -46,6 +46,65 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 
 }
+    /* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background-color: #1d1d1f;
+  transition: all 0.3s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-content {
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navbar ul.show {
+    max-height: 500px; /* tampilkan menu saat dibuka */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Animasi saat hamburger aktif */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 .navbar ul {
   list-style: none;
@@ -835,23 +894,30 @@ footer {
 
     <!-- NAVIGATION BAR ala Apple -->
     <nav class="navbar">
-        <div class="nav-content">
-            <a href="#" class="logo">
-              <img src="IMG_0333 c.png" alt="Tutorku Logo" class="logo-img" />
-              </a>
-      
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#approach">Miss Nanda's Approach</a></li>
-            <li><a href="#subjects">Subjects I Teach</a></li>
-            <li><a href="#programs">Programs & Support</a></li>
-            <li><a href="#why">Why Learn with Miss Nanda</a></li>
-            <li><a href="#testimoni">Parent Stories</a></li>
-            <li><a href="#about">About Miss Nanda</a></li>
-            <li><a href="contact/index.html" target="_blank" rel="noopener" target="_blank" rel="noopener">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+  <div class="nav-content">
+    <a href="#" class="logo">
+      <img src="IMG_0333 c.png" alt="Tutorku Logo" class="logo-img" />
+    </a>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul id="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#approach">Miss Nanda's Approach</a></li>
+      <li><a href="#subjects">Subjects I Teach</a></li>
+      <li><a href="#programs">Programs & Support</a></li>
+      <li><a href="#why">Why Learn with Miss Nanda</a></li>
+      <li><a href="#testimoni">Parent Stories</a></li>
+      <li><a href="#about">About Miss Nanda</a></li>
+      <li><a href="contact/index.html" target="_blank" rel="noopener">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
       <section id="home" class="hero-section">
         <div class="hero-slide">
@@ -1407,7 +1473,13 @@ const swiper = new Swiper('.whybuy-swiper', {
   },
   freeMode: true, // Penting biar geser bebas
 });
+const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
 
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('show');
+  });
 
 
 
@@ -1418,6 +1490,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

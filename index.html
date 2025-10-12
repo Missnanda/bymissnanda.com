@@ -645,33 +645,25 @@
 /* ===================== */
 
 @media (max-width: 768px) {
-  .carousel-container {
-    overflow: visible !important;
-  }
-
   .carousel-track {
     animation: none !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 16px !important;
+    gap: 24px !important;
     align-items: center !important;
-    width: 100% !important;
     transform: none !important;
   }
 
   .carousel-item {
-    width: 100% !important;
+    width: 90% !important;
     margin: 0 auto !important;
-    border-radius: 16px !important;
-    background-color: #000; /* opsional: biar nggak kelihatan blank kalau fotonya ada ruang kosong */
   }
 
   .carousel-item img {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    object-fit: contain !important; /* 🔥 tampil utuh, nggak terpotong */
-    border-radius: 16px !important;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
   }
 
   /* Sembunyikan duplikat */
@@ -1628,6 +1620,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

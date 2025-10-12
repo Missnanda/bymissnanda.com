@@ -139,6 +139,61 @@
   width: auto;
   display: block;
 }
+  /* iPad portrait mode (hamburger aktif) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .nav-content {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .navbar ul {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .navbar ul.show {
+    max-height: 500px;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+  }
+
+  /* Sembunyikan menu default di iPad portrait */
+  .navbar ul:not(.show) {
+    display: flex;
+    max-height: 0;
+    overflow: hidden;
+  }
+}
+
+/* iPad landscape tetap desktop mode */
+@media (min-width: 1024px) and (orientation: landscape) {
+  .hamburger {
+    display: none;
+  }
+
+  .navbar ul {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    background: none;
+    max-height: none;
+    overflow: visible;
+  }
+}
 .hero-section {
       position: relative;
       width: 100%;
@@ -1557,6 +1612,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

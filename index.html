@@ -709,84 +709,81 @@ html, body {
   .whybuy-nav-buttons .swiper-button-next {
   margin-right: -12px; /* Bisa coba -12px atau -16px */
 }
-    /* ============================= */
-/* ✅ RESPONSIVE COMPACT MODE (HP) */
+/* ============================= */
+/* ✅ RESPONSIVE HP FULLSCREEN CARD */
 /* ============================= */
 @media (max-width: 768px) {
   .whybuy-section {
-    padding: 60px 0 80px; /* kurangi jarak atas dan bawah */
-  }
-
-  .whybuy-header-wrapper {
-    padding: 0 16px;
+    padding: 40px 0 60px; /* biar tidak terlalu tinggi */
+    background-color: #fff;
   }
 
   .whybuy-header {
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .whybuy-swiper {
-    padding: 0 12px 60px; /* kurangi padding bawah biar gak banyak ruang kosong */
+    padding: 0; /* hilangkan padding agar card benar-benar penuh */
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    width: 100% !important; /* ✅ biar 1 card isi 1 layar */
+    display: flex;
+    justify-content: center;
   }
 
   .whybuy-card {
-    width: 260px; /* lebih kecil biar muat lebih banyak di layar */
-    min-height: 240px;
-    padding: 20px;
+    width: 90%; /* isi hampir penuh layar, kasih sedikit jarak kiri-kanan */
+    min-height: 70vh; /* ✅ isi tinggi hampir satu layar */
+    padding: 28px 20px;
+    border-radius: 18px;
+    background: #f5f5f7;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .whybuy-card i {
-    font-size: 20px;
-    margin-bottom: 16px;
+    font-size: 28px;
+    margin-bottom: 18px;
   }
 
   .whybuy-card h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 
   .whybuy-card p {
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.6;
   }
 
   .whybuy-nav-buttons {
-    justify-content: center; /* tombol di tengah untuk HP */
-    margin-top: 20px;
+    justify-content: center;
+    margin-top: 24px;
   }
 
   .whybuy-button {
-    width: 32px;
-    height: 32px;
-    background-color: rgba(230, 230, 235, 0.8);
+    width: 36px;
+    height: 36px;
+    background-color: rgba(220, 220, 225, 0.9);
   }
 
   .whybuy-button::after {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
-/* ✅ Responsif untuk tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .whybuy-section {
-    padding: 70px 0 100px;
-  }
-
-  .whybuy-card {
-    width: 300px;
-    min-height: 260px;
-  }
-
-  .whybuy-header {
-    font-size: 28px;
-  }
-
-  .whybuy-nav-buttons {
-    justify-content: flex-end;
-  }
-}
 .testimonial-section {
   background-color: #f5f5f7;
   padding: 100px 0;
@@ -1635,6 +1632,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

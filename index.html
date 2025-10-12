@@ -865,33 +865,55 @@ html, body {
   background-color: #f9f9f9;
   transform: scale(1.05);
 }
-    /* Responsif: ubah jadi 1 card per slide di HP */
+  /* Responsif untuk HP */
 @media (max-width: 768px) {
-  .testimonial-swiper .swiper-slide {
-    display: grid;
-    grid-template-columns: 1fr; /* 1 kolom saja */
-    gap: 16px; /* jarak antar card */
-    width: 85%; /* biar gak terlalu mepet tepi layar */
-  }
-
   .testimonial-swiper {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: hidden; /* penting agar slide berikutnya tidak terlihat */
+    width: 100%;
   }
 
+  .testimonial-swiper .swiper-wrapper {
+    padding-right: 0;
+  }
+
+  .testimonial-swiper .swiper-slide {
+    width: 100%; /* penuh satu layar */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+    padding: 0 24px;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    min-height: 180px;
+  }
+
+  /* Heading biar lebih rapi */
   .testimonial-heading {
     font-size: 22px;
-    padding-left: 16px;
+    padding-left: 20px;
   }
 
-  .testimonial-section {
-    padding: 60px 0;
-  }
-
+  /* Tombol navigasi di kanan bawah layar */
   .testimonial-controls {
-    justify-content: center;
-    padding-right: 0;
-    margin-top: 24px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 0;
+    margin: 0;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  .testimonial-controls .swiper-button-prev,
+  .testimonial-controls .swiper-button-next {
+    width: 36px;
+    height: 36px;
   }
 }
 /* CTA Section Styling */
@@ -1641,6 +1663,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

@@ -458,7 +458,75 @@
         opacity: 1;
         transform: translateY(0);
       }
-    }
+      /* === FULL SCREEN CARD MODE UNTUK HP & TABLET PORTRAIT === */
+@media (min-width: 768px) {
+  .approach-section {
+    padding: 0;
+  }
+
+  .pendekatan-swiper {
+    height: 100vh; /* Tinggi penuh layar */
+  }
+
+  .pendekatan-swiper .swiper-wrapper {
+    height: 100%;
+  }
+
+  .pendekatan-swiper .swiper-slide.card {
+    width: 100%;
+    height: 100vh; /* Setiap card 1 layar penuh */
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 50vh; /* Gambar setengah layar atas */
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+
+  .popover-button {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .popover-note {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  /* Swiper button tetap di kanan bawah */
+  .pendekatan-controls {
+    position: absolute;
+    bottom: 30px;
+    right: 24px;
+    z-index: 20;
+    margin-top: 0;
+    padding-right: 0;
+  }
+}
     .essentials-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -1612,6 +1680,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

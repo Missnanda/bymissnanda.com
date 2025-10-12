@@ -604,45 +604,8 @@
     transform: translateX(-50%);
   }
   /* ===================== */
-/* 📱 MOBILE LAYOUT */
-/* ===================== */
-@media (max-width: 768px) {
-  .carousel-container {
-    overflow: visible !important;
-  }
-
-  .carousel-track {
-    animation: none !important; /* hentikan animasi scroll kiri-kanan */
-    display: flex !important;
-    flex-direction: column !important; /* ubah jadi vertikal */
-    gap: 16px !important;
-    align-items: center !important;
-    transform: none !important;
-  }
-
-  .carousel-item {
-    width: 100% !important;
-    max-width: 95% !important; /* biar ada sedikit jarak dari tepi layar */
-    height: auto !important;
-    margin: 0 auto !important;
-    border-radius: 12px !important;
-  }
-
-  .carousel-item img {
-    width: 100% !important;
-    height: auto !important;
-    object-fit: cover !important; /* tetap rapi tanpa aneh */
-    border-radius: 12px !important;
-    display: block !important;
-  }
-
-  /* Kalau kamu mau hilangkan duplikat di HP */
-  .carousel-track .carousel-item:nth-child(n+8) {
-    display: none !important;
-  }
-}
     }
-    
+ }    
 .whybuy-section {
     padding: 80px 0 120px;
     overflow: hidden;
@@ -1591,6 +1554,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

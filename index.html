@@ -541,6 +541,7 @@
 
 .carousel-track {
   display: flex;
+  width: max-content; /* biar track nyesuai isi */
   animation: scroll-left 40s linear infinite;
 }
 
@@ -602,9 +603,13 @@
   }
   100% {
     transform: translateX(-50%);
-  
-    }
- }    
+  }
+}
+
+/* Tambahan penting: hilangkan overflow di semua layar */
+html, body {
+  overflow-x: hidden;
+}
 .whybuy-section {
     padding: 80px 0 120px;
     overflow: hidden;
@@ -1553,6 +1558,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 

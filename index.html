@@ -609,15 +609,15 @@
 @media (max-width: 768px) {
   .carousel-track {
     animation: none; /* stop auto-scroll di HP */
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
   }
 
   .carousel-item {
-    width: 100%;
+    width: 90%;
     height: auto;
-    aspect-ratio: 3 / 2;
     margin-right: 0;
   }
 
@@ -625,6 +625,10 @@
     width: 100%;
     height: auto;
     border-radius: 12px;
+    object-fit: cover;
+  }
+  .carousel-track .carousel-item:nth-child(n+8) {
+    display: none;
   }
 }
 
@@ -1575,6 +1579,7 @@ const swiper = new Swiper('.whybuy-swiper', {
   
 </body>
 </html>
+
 
 
 
